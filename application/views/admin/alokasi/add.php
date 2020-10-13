@@ -20,23 +20,35 @@
              
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">nm_alokasi</label>
+                                    <label class="form-control-label" for="teknisi4_id">Nama Alokasi</label>
                                     <input type="text" name="nm_alokasi" class="form-control" >
                                 </div>
                             </div>
-                             <div class="col-lg-6">
+                              <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">id_posko</label>
-                                    <input type="text" name="id_posko" class="form-control" >
+                                    <label class="form-control-label" for="teknisi4_id">Posko</label>
+                                    <select class="form-control" required name="id_posko">
+                                        <option value="">--</option>
+                                        <?php foreach ($posko as $key): ?>
+                                        <option value="<?= $key->id_posko ?>"><?= $key->nm_posko ?></option>
+                                            
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">id_bantuan</label>
-                                    <input type="text" name="id_bantuan" class="form-control" >
+                                    <label class="form-control-label" for="teknisi4_id">Bantuan</label>
+                                    <select class="form-control" required name="id_bantuan">
+                                        <option value="">--</option>
+                                        <?php foreach ($bantuan as $key): ?>
+                                        <option value="<?= $key->id_bantuan ?>"><?= $key->jenis_bantuan ?></option>
+                                            
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                    <!--         <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label" for="teknisi4_id">tgl_diajukan</label>
                                     <input type="text" name="tgl_diajukan" class="form-control" >
@@ -47,7 +59,7 @@
                                     <label class="form-control-label" for="teknisi4_id">tgl_alokasi</label>
                                     <input type="text" name="tgl_alokasi" class="form-control" >
                                 </div>
-                            </div>
+                            </div> -->
                
 
                             <div class="col-lg-12">

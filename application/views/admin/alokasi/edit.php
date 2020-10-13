@@ -25,30 +25,42 @@
                                     <input type="text" name="nm_alokasi" class="form-control" value="<?= $alokasi->nm_alokasi ?>">
                                 </div>
                             </div>
-                             <div class="col-lg-6">
+                <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">id_posko</label>
-                                    <input type="text" name="id_posko" class="form-control" value="<?= $alokasi->id_posko ?>">
+                                    <label class="form-control-label" for="teknisi4_id">Posko</label>
+                                    <select class="form-control" required name="id_posko">
+                                        <option value="">--</option>
+                                        <?php foreach ($posko as $key): ?>
+                                            <?php if ($key->id_posko == $alokasi->id_posko): ?>
+                                        <option value="<?= $key->id_posko ?>" selected><?= $key->nm_posko ?></option>
+                                                
+                                                <?php else: ?>
+
+                                        <option value="<?= $key->id_posko ?>"><?= $key->nm_posko ?></option>
+                                            <?php endif ?>
+                                            
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">id_bantuan</label>
-                                    <input type="text" name="id_bantuan" class="form-control" value="<?= $alokasi->id_bantuan ?>">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">tgl_diajukan</label>
-                                    <input type="text" name="tgl_diajukan" class="form-control" value="<?= $alokasi->tgl_diajukan ?>">
-                                </div>
-                            </div>
-                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">tgl_alokasi</label>
-                                    <input type="text" name="tgl_alokasi" class="form-control" value="<?= $alokasi->tgl_alokasi ?>">
-                                </div>
-                            </div>
+                                    <label class="form-control-label" for="teknisi4_id">Bantuan</label>
+                                                  <select class="form-control" required name="id_bantuan">
+                                        <option value="">--</option>
+                                        <?php foreach ($bantuan as $key): ?>
+                                            <?php if ($key->id_bantuan == $alokasi->id_bantuan): ?>
+                                        <option value="<?= $key->id_bantuan ?>" selected><?= $key->jenis_bantuan ?></option>
+                                                
+                                                <?php else: ?>
+
+                                        <option value="<?= $key->id_bantuan ?>"><?= $key->jenis_bantuan ?></option>
+                                            <?php endif ?>
+                                            
+                                        <?php endforeach ?>
+                                    </select>
+                                </d
+                            
                
 
                             <div class="col-lg-12">

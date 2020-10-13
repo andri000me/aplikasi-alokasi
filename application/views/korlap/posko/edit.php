@@ -7,7 +7,7 @@
                         <div class="white-box">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3 class="box-title">Tambah Data Posko</h3> 
+                                    <h3 class="box-title">Edit Data Posko</h3> 
                                 </div>
 
                                 <div class="col-6">
@@ -15,7 +15,7 @@
                                 </div>
                             </div>
 
-                            <form action="<?= base_url('page_admin/edit_posko_bum') ?>" method="post">
+                            <form action="<?= base_url('page_korlap/edit_posko_bum') ?>" method="post">
                                 
                                 <div class="row">
             

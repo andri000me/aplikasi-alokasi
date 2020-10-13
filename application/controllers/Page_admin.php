@@ -40,7 +40,7 @@ class Page_admin extends CI_Controller{
 
         $data['title'] = 'Dashboard';
         
-        $data['alokasi'] = $this->model_alokasi->get_alokasi();
+        $data['alokasi'] = $this->model_alokasi->get_alokasi_admin();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/alokasi/index');
@@ -49,8 +49,8 @@ class Page_admin extends CI_Controller{
     
     public function add_alokasi(){
                 $data['title'] = 'Tambah Data Alokasi';
-        
-       
+        $data['bantuan'] = $this->model_bantuan->get_bantuan();
+       $data['posko'] = $this->model_posko->get_posko_admin();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/alokasi/add');
@@ -59,6 +59,7 @@ class Page_admin extends CI_Controller{
 
     public function add_alokasi_bum(){
         $this->model_alokasi->add_alokasi();
+        $this->model_alokasi->update_posko();
         redirect('page_admin/alokasi');
     }
 
@@ -66,7 +67,16 @@ class Page_admin extends CI_Controller{
 
         $data['title'] = 'Dashboard';
 
-        $data['alokasi'] = $this->db->get_where('alokasi', ['id_alokasi' => $id])->row();
+        $data['alokasi'] = $this->db->query("
+            SELECT * from alokasi
+            JOIN posko ON alokasi.id_posko = posko.id_posko
+            JOIN bantuan ON alokasi.id_bantuan = bantuan.id_bantuan
+
+            WHERE id_alokasi = '$id'
+            ")->row();
+
+ $data['posko'] = $this->model_posko->get_posko_admin();
+ $data['bantuan'] = $this->model_bantuan->get_bantuan();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/alokasi/edit');
@@ -152,66 +162,66 @@ class Page_admin extends CI_Controller{
             public function posko(){
 
         
-        if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
+        // if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
 
-            if ($this->uri->segment('3') == 'edit_posko') {
-                return $this->edit_posko($this->uri->segment('4'));
-            }
+        //     if ($this->uri->segment('3') == 'edit_posko') {
+        //         return $this->edit_posko($this->uri->segment('4'));
+        //     }
      
-        }
+        // }
 
-        if (!empty($this->uri->segment('3'))) {
-            if ($this->uri->segment('3') == 'add') {
-                return $this->add_posko();
-            }
-        }
+        // if (!empty($this->uri->segment('3'))) {
+        //     if ($this->uri->segment('3') == 'add') {
+        //         return $this->add_posko();
+        //     }
+        // }
 
         $data['title'] = 'Data posko';
         
-        $data['posko'] = $this->model_posko->get_posko();
+        $data['posko'] = $this->model_posko->get_posko_admin();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/posko/index');
         $this->load->view('template/footer');
     }
     
-    public function add_posko(){
-                $data['title'] = 'Tambah Data posko';
+    // public function add_posko(){
+    //             $data['title'] = 'Tambah Data posko';
         
-       $data['bencana'] = ['Banjir', 'Gempa Bumi', 'Tsunami', 'Gunung Meletus'];
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/posko/add', $data);
-        $this->load->view('template/footer');
-    }
+    //    $data['bencana'] = ['Banjir', 'Gempa Bumi', 'Tsunami', 'Gunung Meletus'];
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_admin');
+    //     $this->load->view('admin/posko/add', $data);
+    //     $this->load->view('template/footer');
+    // }
 
-    public function add_posko_bum(){
+    // public function add_posko_bum(){
         
-        $this->model_posko->add_posko();
-        redirect('page_admin/posko');
-    }
+    //     $this->model_posko->add_posko();
+    //     redirect('page_admin/posko');
+    // }
 
-    public function edit_posko($id){
+    // public function edit_posko($id){
 
-        $data['title'] = 'Data posko';
+    //     $data['title'] = 'Data posko';
 
-        $data['bencana'] = ['Banjir', 'Gempa Bumi', 'Tsunami', 'Gunung Meletus'];
-        $data['posko'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/posko/edit', $data);
-        $this->load->view('template/footer');
-    }
+    //     $data['bencana'] = ['Banjir', 'Gempa Bumi', 'Tsunami', 'Gunung Meletus'];
+    //     $data['posko'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_admin');
+    //     $this->load->view('admin/posko/edit', $data);
+    //     $this->load->view('template/footer');
+    // }
 
-    public function edit_posko_bum(){
-        $this->model_posko->edit_posko();
-        redirect('page_admin/posko');
-    }
+    // public function edit_posko_bum(){
+    //     $this->model_posko->edit_posko();
+    //     redirect('page_admin/posko');
+    // }
 
-    public function hapus_posko($id){
-        $this->model_posko->hapus_posko($id);
-        redirect('page_admin/posko');
-    }
+    // public function hapus_posko($id){
+    //     $this->model_posko->hapus_posko($id);
+    //     redirect('page_admin/posko');
+    // }
 
 
 

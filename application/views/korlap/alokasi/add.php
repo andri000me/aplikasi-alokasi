@@ -20,7 +20,7 @@
              
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">nm_alokasi</label>
+                                    <label class="form-control-label" for="teknisi4_id">Nama Alokasi</label>
                                     <input type="text" name="nm_alokasi" class="form-control" >
                                 </div>
                             </div>

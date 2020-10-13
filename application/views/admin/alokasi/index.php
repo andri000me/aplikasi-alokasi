@@ -21,7 +21,7 @@
                                             <th>Nama Alokasi</th>
                                             <th>Posko</th>
                                             <th>Bantuan</th>
-                                            <th>Tanggal Diajukan</th>
+                                           
                                             <th>Tanggal Alokasi</th>
                                             <th>Aksi</th>
                              
@@ -37,7 +37,7 @@
                                             <td><?= $key->nm_alokasi ?></td>
                                             <td><?= $key->id_posko ?></td>
                                             <td><?= $key->id_bantuan ?></td>
-                                            <td><?= $key->tgl_diajukan ?></td>
+                                         
                                             <td><?= $key->tgl_alokasi ?></td>
                                             <td>
                                             	<a href="<?= base_url('page_admin/alokasi/edit_alokasi') ?>/<?= $key->id_alokasi ?>" class="badge badge-success">Edit</a>

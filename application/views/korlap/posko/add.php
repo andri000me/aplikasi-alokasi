@@ -11,7 +11,7 @@
                         		</div>
                         	</div>
 
-                        	<form action="<?= base_url('page_admin/add_posko_bum') ?>" method="post">
+                        	<form action="<?= base_url('page_korlap/add_posko_bum') ?>" method="post">
                         		
                         		<div class="row">
             

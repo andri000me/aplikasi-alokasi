@@ -12,7 +12,7 @@ class Page_korlap extends CI_Controller{
     }
  
 
-    function index(){
+   public function index(){
 
     	$data['title'] = 'Dashboard';
         $this->load->view('template/header', $data);
@@ -21,135 +21,135 @@ class Page_korlap extends CI_Controller{
         $this->load->view('template/footer');
     }
 
-    function alokasi(){
+    // function alokasi(){
 
         
-        if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
+    //     if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
 
-            if ($this->uri->segment('3') == 'edit_alokasi') {
-                return $this->edit_alokasi($this->uri->segment('4'));
-            }
+    //         if ($this->uri->segment('3') == 'edit_alokasi') {
+    //             return $this->edit_alokasi($this->uri->segment('4'));
+    //         }
      
-        }
+    //     }
 
-        if (!empty($this->uri->segment('3'))) {
-            if ($this->uri->segment('3') == 'add') {
-                return $this->add_alokasi();
-            }
-        }
+    //     if (!empty($this->uri->segment('3'))) {
+    //         if ($this->uri->segment('3') == 'add') {
+    //             return $this->add_alokasi();
+    //         }
+    //     }
 
-        $data['title'] = 'Dashboard';
+    //     $data['title'] = 'Dashboard';
         
-        $data['alokasi'] = $this->model_alokasi->get_alokasi();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/alokasi/index');
-        $this->load->view('template/footer');
-    }
+    //     $data['alokasi'] = $this->model_alokasi->get_alokasi();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/alokasi/index');
+    //     $this->load->view('template/footer');
+    // }
     
-    public function add_alokasi(){
-                $data['title'] = 'Tambah Data Alokasi';
+    // public function add_alokasi(){
+    //             $data['title'] = 'Tambah Data Alokasi';
         
        
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/alokasi/add');
-        $this->load->view('template/footer');
-    }
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/alokasi/add');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function add_alokasi_bum(){
-        $this->model_alokasi->add_alokasi();
-        redirect('page_korlap/alokasi');
-    }
+    // public function add_alokasi_bum(){
+    //     $this->model_alokasi->add_alokasi();
+    //     redirect('page_korlap/alokasi');
+    // }
 
-    public function edit_alokasi($id){
+    // public function edit_alokasi($id){
 
-        $data['title'] = 'Dashboard';
+    //     $data['title'] = 'Dashboard';
 
-        $data['alokasi'] = $this->db->get_where('alokasi', ['id_alokasi' => $id])->row();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/alokasi/edit');
-        $this->load->view('template/footer');
-    }
+    //     $data['alokasi'] = $this->db->get_where('alokasi', ['id_alokasi' => $id])->row();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/alokasi/edit');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function edit_alokasi_bum(){
-        $this->model_alokasi->edit_alokasi();
-        redirect('page_korlap/alokasi');
-    }
+    // public function edit_alokasi_bum(){
+    //     $this->model_alokasi->edit_alokasi();
+    //     redirect('page_korlap/alokasi');
+    // }
 
-    public function hapus_alokasi($id){
-        $this->model_alokasi->hapus_alokasi($id);
-        redirect('page_korlap/alokasi');
-    }
+    // public function hapus_alokasi($id){
+    //     $this->model_alokasi->hapus_alokasi($id);
+    //     redirect('page_korlap/alokasi');
+    // }
 
 
-    public function bantuan(){
+    // public function bantuan(){
 
     	
-        if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
+    //     if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
 
-            if ($this->uri->segment('3') == 'edit_bantuan') {
-                return $this->edit_bantuan($this->uri->segment('4'));
-            }
+    //         if ($this->uri->segment('3') == 'edit_bantuan') {
+    //             return $this->edit_bantuan($this->uri->segment('4'));
+    //         }
      
-        }
+    //     }
 
-        if (!empty($this->uri->segment('3'))) {
-            if ($this->uri->segment('3') == 'add') {
-                return $this->add_bantuan();
-            }
-        }
+    //     if (!empty($this->uri->segment('3'))) {
+    //         if ($this->uri->segment('3') == 'add') {
+    //             return $this->add_bantuan();
+    //         }
+    //     }
 
-        $data['title'] = 'Data Bantuan';
+    //     $data['title'] = 'Data Bantuan';
         
-        $data['bantuan'] = $this->model_bantuan->get_bantuan();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/bantuan/index');
-        $this->load->view('template/footer');
-    }
+    //     $data['bantuan'] = $this->model_bantuan->get_bantuan();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/bantuan/index');
+    //     $this->load->view('template/footer');
+    // }
     
-    public function add_bantuan(){
-                $data['title'] = 'Tambah Data bantuan';
+    // public function add_bantuan(){
+    //             $data['title'] = 'Tambah Data bantuan';
         
        
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/bantuan/add');
-        $this->load->view('template/footer');
-    }
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/bantuan/add');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function add_bantuan_bum(){
+    // public function add_bantuan_bum(){
 
-        $this->model_bantuan->add_bantuan();
-        redirect('page_korlap/bantuan');
-    }
+    //     $this->model_bantuan->add_bantuan();
+    //     redirect('page_korlap/bantuan');
+    // }
 
-    public function edit_bantuan($id){
+    // public function edit_bantuan($id){
 
-        $data['title'] = 'Data Bantuan';
+    //     $data['title'] = 'Data Bantuan';
 
-        $data['bantuan'] = $this->db->get_where('bantuan', ['id_bantuan' => $id])->row();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_korlap');
-        $this->load->view('korlap/bantuan/edit');
-        $this->load->view('template/footer');
-    }
+    //     $data['bantuan'] = $this->db->get_where('bantuan', ['id_bantuan' => $id])->row();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_korlap');
+    //     $this->load->view('korlap/bantuan/edit');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function edit_bantuan_bum(){
-        $this->model_bantuan->edit_bantuan();
-        redirect('page_korlap/bantuan');
-    }
+    // public function edit_bantuan_bum(){
+    //     $this->model_bantuan->edit_bantuan();
+    //     redirect('page_korlap/bantuan');
+    // }
 
-    public function hapus_bantuan($id){
-        $this->model_bantuan->hapus_bantuan($id);
-        redirect('page_korlap/bantuan');
-    }
+    // public function hapus_bantuan($id){
+    //     $this->model_bantuan->hapus_bantuan($id);
+    //     redirect('page_korlap/bantuan');
+    // }
 
 
   
-            public function posko(){
+    public function posko(){
 
         
         if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {

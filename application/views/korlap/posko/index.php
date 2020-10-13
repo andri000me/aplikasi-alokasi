@@ -9,7 +9,7 @@
                         		</div>
 
                         		<div class="col-6">
-                        			<a href="<?= base_url('page_admin/posko/add') ?>" class="btn btn-primary">Tambah</a>
+                        			<a href="<?= base_url('page_korlap/posko/add') ?>" class="btn btn-primary">Tambah</a>
                         		</div>
                         	</div>
                             
@@ -45,8 +45,8 @@
                                             <td><?= $key->alamat_posko ?></td>
                                             <td><?= $key->status ?></td>
                                             <td>
-                                            	<a href="<?= base_url('page_admin/posko/edit_posko') ?>/<?= $key->id_posko ?>" class="badge badge-success">Edit</a>
-                                            	<a href="<?= base_url('page_admin/hapus_posko') ?>/<?= $key->id_posko ?>" class="badge badge-danger" onclick="confirm('yakin?')">Hapus</a>
+                                            	<a href="<?= base_url('page_korlap/posko/edit_posko') ?>/<?= $key->id_posko ?>" class="badge badge-success">Edit</a>
+                                            	<a href="<?= base_url('page_korlap/hapus_posko') ?>/<?= $key->id_posko ?>" class="badge badge-danger" onclick="confirm('yakin?')">Hapus</a>
                                             </td>
                                             
                                         </tr>

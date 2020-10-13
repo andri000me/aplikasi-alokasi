@@ -9,7 +9,7 @@
                         		</div>
 
                         		<div class="col-6">
-                        			<a href="<?= base_url('page_admin/posko/add') ?>" class="btn btn-primary">Tambah</a>
+                        			<!-- <a href="<?= base_url('page_admin/posko/add') ?>" class="btn btn-primary">Tambah</a> -->
                         		</div>
                         	</div>
                             
@@ -26,7 +26,7 @@
                                             <th>Longtitude</th>
                                             <th>Alamat Posko</th>
                                             <th>Status</th>
-                                            <th>Aksi</th>
+                                            <!-- <th>Aksi</th> -->
                              
                                         </tr>
                                     </thead>
@@ -44,10 +44,10 @@
                                             <td><?= $key->longitude ?></td>
                                             <td><?= $key->alamat_posko ?></td>
                                             <td><?= $key->status ?></td>
-                                            <td>
+                                         <!--    <td>
                                             	<a href="<?= base_url('page_admin/posko/edit_posko') ?>/<?= $key->id_posko ?>" class="badge badge-success">Edit</a>
                                             	<a href="<?= base_url('page_admin/hapus_posko') ?>/<?= $key->id_posko ?>" class="badge badge-danger" onclick="confirm('yakin?')">Hapus</a>
-                                            </td>
+                                            </td> -->
                                             
                                         </tr>
                                         <?php $i++; ?>

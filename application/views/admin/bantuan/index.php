@@ -5,11 +5,11 @@
                         <div class="white-box">
                         	<div class="row">
                         		<div class="col-6">
-                        			<h3 class="box-title">Data Alokasi</h3> 
+                        			<h3 class="box-title">Data Banuan</h3> 
                         		</div>
 
                         		<div class="col-6">
-                        			<a href="<?= base_url('page_admin/alokasi/add') ?>" class="btn btn-primary">Tambah</a>
+                        			<a href="<?= base_url('page_admin/bantuan/add') ?>" class="btn btn-primary">Tambah</a>
                         		</div>
                         	</div>
                             
@@ -17,31 +17,26 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>User</th>
-                                            <th>Nama Alokasi</th>
-                                            <th>Posko</th>
-                                            <th>Bantuan</th>
-                                            <th>Tanggal Diajukan</th>
-                                            <th>Tanggal Alokasi</th>
+                                            <th>Jenis Bantuan</th>
+                                            <th>Jumlah Bantuan</th>
+                                         
+                                         
                                             <th>Aksi</th>
                              
                                         </tr>
                                     </thead>
                                     <tbody>
                                     	<?php $i = 1; ?>
-                                    	<?php foreach ($alokasi as $key): ?>
+                                    	<?php foreach ($bantuan as $key): ?>
                                     		
                                         <tr>
                                             <td><?= $i; ?></td>
-                                            <td><?= $key->id ?></td>
-                                            <td><?= $key->nm_alokasi ?></td>
-                                            <td><?= $key->id_posko ?></td>
-                                            <td><?= $key->id_bantuan ?></td>
-                                            <td><?= $key->tgl_diajukan ?></td>
-                                            <td><?= $key->tgl_alokasi ?></td>
+                                            <td><?= $key->jenis_bantuan ?></td>
+                                            <td><?= $key->jumlah_bantuan ?></td>
+                                           
                                             <td>
-                                            	<a href="<?= base_url('page_admin/alokasi/edit_alokasi') ?>/<?= $key->id_alokasi ?>" class="badge badge-success">Edit</a>
-                                            	<a href="<?= base_url('page_admin/hapus_alokasi') ?>/<?= $key->id_alokasi ?>" class="badge badge-danger" onclick="confirm('yakin?')">Hapus</a>
+                                            	<a href="<?= base_url('page_admin/bantuan/edit_bantuan') ?>/<?= $key->id_bantuan ?>" class="badge badge-success">Edit</a>
+                                            	<a href="<?= base_url('page_admin/hapus_bantuan') ?>/<?= $key->id_bantuan ?>" class="badge badge-danger" onclick="confirm('yakin?')">Hapus</a>
                                             </td>
                                             
                                         </tr>

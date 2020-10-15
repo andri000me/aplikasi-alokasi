@@ -34,7 +34,7 @@ class Page_admin extends CI_Controller{
 
         if (!empty($this->uri->segment('3'))) {
             if ($this->uri->segment('3') == 'add') {
-                return $this->add_alokasi();
+                return $this->add_alokasi($this->uri->segment('4'));
             }
         }
 
@@ -47,13 +47,14 @@ class Page_admin extends CI_Controller{
         $this->load->view('template/footer');
     }
     
-    public function add_alokasi(){
+    public function add_alokasi($id){
                 $data['title'] = 'Tambah Data Alokasi';
-        $data['bantuan'] = $this->model_bantuan->get_bantuan();
-       $data['posko'] = $this->model_posko->get_posko_admin();
+         $data['posko'] = $this->model_posko->get_posko_admin();
+          $data['bantuan'] = $this->model_bantuan->get_bantuan();
+          $data['alokasi'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/alokasi/add');
+        $this->load->view('admin/alokasi/add', $data);
         $this->load->view('template/footer');
     }
 
@@ -67,13 +68,7 @@ class Page_admin extends CI_Controller{
 
         $data['title'] = 'Dashboard';
 
-        $data['alokasi'] = $this->db->query("
-            SELECT * from alokasi
-            JOIN posko ON alokasi.id_posko = posko.id_posko
-            JOIN bantuan ON alokasi.id_bantuan = bantuan.id_bantuan
-
-            WHERE id_alokasi = '$id'
-            ")->row();
+         $data['alokasi'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
 
  $data['posko'] = $this->model_posko->get_posko_admin();
  $data['bantuan'] = $this->model_bantuan->get_bantuan();

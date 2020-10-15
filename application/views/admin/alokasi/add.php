@@ -16,26 +16,54 @@
                         		<div class="row">
             
              
+                                    <input type="hidden" name="id_posko" class="form-control" value="<?= $alokasi->id_posko ?>" readonly>
   
-             
+       
+                                                       <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Nama Posko</label>
+                                    <input type="text" name="nm_posko" class="form-control" value="<?= $alokasi->nm_posko ?>" readonly>
+                                </div>
+                            </div>
+                           <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Jumlah Korban</label>
+                                    <input type="text" name="jumlah_korban" class="form-control" value="<?= $alokasi->jumlah_korban ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">kondisi</label>
+                                    <input type="text" name="kondisi" class="form-control" value="<?= $alokasi->kondisi ?>" readonly>
+                                </div>
+                            </div>
+                             <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">latitude</label>
+                                    <input type="text" name="latitude" class="form-control" value="<?= $alokasi->latitude ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Longitude</label>
+                                    <input type="text" name="longitude" class="form-control" value="<?= $alokasi->longitude ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Alamat Posko</label>
+                                    <input type="text" name="alamat_posko" class="form-control" value="<?= $alokasi->alamat_posko ?>" readonly>
+                                </div>
+               </div>
+
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label" for="teknisi4_id">Nama Alokasi</label>
                                     <input type="text" name="nm_alokasi" class="form-control" >
                                 </div>
                             </div>
-                              <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Posko</label>
-                                    <select class="form-control" required name="id_posko">
-                                        <option value="">--</option>
-                                        <?php foreach ($posko as $key): ?>
-                                        <option value="<?= $key->id_posko ?>"><?= $key->nm_posko ?></option>
-                                            
-                                        <?php endforeach ?>
-                                    </select>
-                                </div>
-                            </div>
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label" for="teknisi4_id">Bantuan</label>
@@ -48,19 +76,7 @@
                                     </select>
                                 </div>
                             </div>
-                    <!--         <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">tgl_diajukan</label>
-                                    <input type="text" name="tgl_diajukan" class="form-control" >
-                                </div>
-                            </div>
-                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">tgl_alokasi</label>
-                                    <input type="text" name="tgl_alokasi" class="form-control" >
-                                </div>
-                            </div> -->
-               
+
 
                             <div class="col-lg-12">
                                 <div class="form-group">

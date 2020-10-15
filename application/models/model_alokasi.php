@@ -9,11 +9,10 @@ class model_alokasi extends CI_Model {
 
 public function get_alokasi_admin(){
 		return  $this->db->query("
-            SELECT * from alokasi
-            JOIN posko ON alokasi.id_posko = posko.id_posko
-            JOIN bantuan ON alokasi.id_bantuan = bantuan.id_bantuan
+            SELECT * from posko
+           
 
-            WHERE posko.status = 'menunggu distribusi'
+            WHERE posko.status = 'menunggu alokasi'
             ")->result();
 	}
 

@@ -168,7 +168,7 @@ class Page_korlap extends CI_Controller{
 
         $data['title'] = 'Data posko';
         
-        $data['posko'] = $this->model_posko->get_posko();
+        $data['posko'] = $this->model_posko->get_posko_korlap();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_korlap');
         $this->load->view('korlap/posko/index');

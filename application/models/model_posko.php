@@ -7,6 +7,10 @@ class model_posko extends CI_Model {
 		return $this->db->get('posko')->result();
 	}
 
+		public function get_posko_korlap(){
+		return $this->db->get_where('posko', ['id' => $this->session->userdata('id')])->result();
+	}
+
 	public function get_posko_admin(){
 		return $this->db->get_where('posko', ['status' => 'menunggu alokasi'])->result();
 	}

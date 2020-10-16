@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>plugins/images/favicon.png">
+   <link rel="shortcut icon" href="<?php echo base_url('assets/logo.png')?>">
     <title><?= $title;  ?></title>
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url('assets/pixel-html/'); ?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +45,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-                <div class="top-left-part"><a class="logo" href=""><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alokasi</b><span class="hidden-xs"></span></a></div>
-         
+                <!-- <div class="top-left-part"><a class="logo" href=""><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alokasi</b><span class="hidden-xs"></span><img width="50" src="<?php echo base_url('assets/logo.png')?>"></a></div>
+                 -->
+            <div class="top-left-part"><a class="logo" href=""><b><img width="50" src="<?php echo base_url('assets/logo.png')?>"></b><span class="hidden-xs"><strong>Alokasi</strong></a></span></a></div>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
                         <a class="profile-pic" href="<?php echo base_url('auth/logout'); ?>"> <i class="fa fa-logout fa-fw" aria-hidden="true"></i><b class="hidden-xs">Logout</b> </a>

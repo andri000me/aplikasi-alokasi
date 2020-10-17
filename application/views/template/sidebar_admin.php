@@ -15,6 +15,9 @@
                     <li>
                         <a href="<?= base_url('page_admin/posko') ?>" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Posko</span></a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('page_admin/korlap') ?>" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Data Korlap</span></a>
+                    </li>
                    
                 </ul>
       

@@ -9,6 +9,7 @@ class Page_admin extends CI_Controller{
         $this->load->model('model_alokasi');
         $this->load->model('model_bantuan');
         $this->load->model('model_posko');
+        $this->load->model('model_korlap');
     }
  
 
@@ -219,6 +220,71 @@ class Page_admin extends CI_Controller{
     // }
 
 
+
+function korlap(){
+
+        
+        if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
+
+            if ($this->uri->segment('3') == 'edit_korlap') {
+                return $this->edit_korlap($this->uri->segment('4'));
+            }
+     
+        }
+
+        if (!empty($this->uri->segment('3'))) {
+            if ($this->uri->segment('3') == 'add') {
+                return $this->add_korlap($this->uri->segment('4'));
+            }
+        }
+
+        $data['title'] = 'Dashboard';
+        
+        $data['korlap'] = $this->model_korlap->get_korlap();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar_admin');
+        $this->load->view('admin/korlap/index');
+        $this->load->view('template/footer');
+    }
+    
+    public function add_korlap($id){
+                $data['title'] = 'Tambah Data korlap';
+         $data['posko'] = $this->model_posko->get_posko_admin();
+          $data['bantuan'] = $this->model_bantuan->get_bantuan();
+          $data['korlap'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar_admin');
+        $this->load->view('admin/korlap/add', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function add_korlap_bum(){
+        $this->model_korlap->add_korlap();
+        $this->model_korlap->update_posko();
+        redirect('page_admin/korlap');
+    }
+
+    public function edit_korlap($id){
+
+        $data['title'] = 'Dashboard';
+
+         $data['korlap'] = $this->db->get_where('user', ['id' => $id])->row();
+
+        $this->load->view('template/header', $data);
+        $this->load->view('template/sidebar_admin');
+        $this->load->view('admin/korlap/edit');
+        $this->load->view('template/footer');
+    }
+
+    public function edit_korlap_bum(){
+        $this->model_korlap->edit_korlap();
+        redirect('page_admin/korlap');
+    }
+
+    public function hapus_korlap($id){
+        $this->model_korlap->hapus_korlap($id);
+        redirect('page_admin/korlap');
+    }
 
 
     

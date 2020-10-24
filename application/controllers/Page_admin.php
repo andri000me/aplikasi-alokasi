@@ -51,7 +51,7 @@ class Page_admin extends CI_Controller{
     public function add_alokasi($id){
                 $data['title'] = 'Tambah Data Alokasi';
          $data['posko'] = $this->model_posko->get_posko_admin();
-          $data['bantuan'] = $this->model_bantuan->get_bantuan();
+          // $data['bantuan'] = $this->model_bantuan->get_bantuan();
           $data['alokasi'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
@@ -72,7 +72,7 @@ class Page_admin extends CI_Controller{
          $data['alokasi'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
 
  $data['posko'] = $this->model_posko->get_posko_admin();
- $data['bantuan'] = $this->model_bantuan->get_bantuan();
+ // $data['bantuan'] = $this->model_bantuan->get_bantuan();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/alokasi/edit');
@@ -250,7 +250,7 @@ function korlap(){
     public function add_korlap($id){
                 $data['title'] = 'Tambah Data korlap';
          $data['posko'] = $this->model_posko->get_posko_admin();
-          $data['bantuan'] = $this->model_bantuan->get_bantuan();
+          // $data['bantuan'] = $this->model_bantuan->get_bantuan();
           $data['korlap'] = $this->db->get_where('posko', ['id_posko' => $id])->row();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');

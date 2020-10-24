@@ -10,7 +10,7 @@ class model_korlap extends CI_Model {
 
 	public function add_korlap(){
 		$data = [
-			'name' => $this->session->userdata('name'),
+			'name' => $this->input->post('nm_korlap'),
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password')),
 			'level' => 'korlap'
@@ -42,7 +42,7 @@ class model_korlap extends CI_Model {
 
 	public function edit_korlap(){
 	$data = [
-			'name' => $this->session->userdata('name'),
+			'name' => $this->input->post('name'),
 			'username' => $this->input->post('username'),
 			
 		];

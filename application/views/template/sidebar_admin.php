@@ -9,9 +9,7 @@
                     <li>
                         <a href="<?= base_url('page_admin/alokasi') ?>" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Alokasi</span></a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('page_admin/bantuan') ?>" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Bantuan</span></a>
-                    </li>
+        
                     <li>
                         <a href="<?= base_url('page_admin/posko') ?>" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Posko</span></a>
                     </li>

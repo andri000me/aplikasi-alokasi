@@ -90,68 +90,68 @@ class Page_admin extends CI_Controller{
     }
 
 
-    public function bantuan(){
+    // public function bantuan(){
 
     	
-        if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
+    //     if (!empty($this->uri->segment('3')) && !empty($this->uri->segment('4'))) {
 
-            if ($this->uri->segment('3') == 'edit_bantuan') {
-                return $this->edit_bantuan($this->uri->segment('4'));
-            }
+    //         if ($this->uri->segment('3') == 'edit_bantuan') {
+    //             return $this->edit_bantuan($this->uri->segment('4'));
+    //         }
      
-        }
+    //     }
 
-        if (!empty($this->uri->segment('3'))) {
-            if ($this->uri->segment('3') == 'add') {
-                return $this->add_bantuan();
-            }
-        }
+    //     if (!empty($this->uri->segment('3'))) {
+    //         if ($this->uri->segment('3') == 'add') {
+    //             return $this->add_bantuan();
+    //         }
+    //     }
 
-        $data['title'] = 'Data Bantuan';
+    //     $data['title'] = 'Data Bantuan';
         
-        $data['bantuan'] = $this->model_bantuan->get_bantuan();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/bantuan/index');
-        $this->load->view('template/footer');
-    }
+    //     $data['bantuan'] = $this->model_bantuan->get_bantuan();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_admin');
+    //     $this->load->view('admin/bantuan/index');
+    //     $this->load->view('template/footer');
+    // }
     
-    public function add_bantuan(){
-                $data['title'] = 'Tambah Data bantuan';
+    // public function add_bantuan(){
+    //             $data['title'] = 'Tambah Data bantuan';
         
        
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/bantuan/add');
-        $this->load->view('template/footer');
-    }
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_admin');
+    //     $this->load->view('admin/bantuan/add');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function add_bantuan_bum(){
+    // public function add_bantuan_bum(){
 
-        $this->model_bantuan->add_bantuan();
-        redirect('page_admin/bantuan');
-    }
+    //     $this->model_bantuan->add_bantuan();
+    //     redirect('page_admin/bantuan');
+    // }
 
-    public function edit_bantuan($id){
+    // public function edit_bantuan($id){
 
-        $data['title'] = 'Data Bantuan';
+    //     $data['title'] = 'Data Bantuan';
 
-        $data['bantuan'] = $this->db->get_where('bantuan', ['id_bantuan' => $id])->row();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/sidebar_admin');
-        $this->load->view('admin/bantuan/edit');
-        $this->load->view('template/footer');
-    }
+    //     $data['bantuan'] = $this->db->get_where('bantuan', ['id_bantuan' => $id])->row();
+    //     $this->load->view('template/header', $data);
+    //     $this->load->view('template/sidebar_admin');
+    //     $this->load->view('admin/bantuan/edit');
+    //     $this->load->view('template/footer');
+    // }
 
-    public function edit_bantuan_bum(){
-        $this->model_bantuan->edit_bantuan();
-        redirect('page_admin/bantuan');
-    }
+    // public function edit_bantuan_bum(){
+    //     $this->model_bantuan->edit_bantuan();
+    //     redirect('page_admin/bantuan');
+    // }
 
-    public function hapus_bantuan($id){
-        $this->model_bantuan->hapus_bantuan($id);
-        redirect('page_admin/bantuan');
-    }
+    // public function hapus_bantuan($id){
+    //     $this->model_bantuan->hapus_bantuan($id);
+    //     redirect('page_admin/bantuan');
+    // }
 
 
   
@@ -174,7 +174,7 @@ class Page_admin extends CI_Controller{
 
         $data['title'] = 'Data posko';
         
-        $data['posko'] = $this->model_posko->get_posko_admin();
+        $data['posko'] = $this->model_posko->get_posko();
         $this->load->view('template/header', $data);
         $this->load->view('template/sidebar_admin');
         $this->load->view('admin/posko/index');

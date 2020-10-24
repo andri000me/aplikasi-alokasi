@@ -21,7 +21,8 @@ public function get_alokasi_admin(){
 			'id' => $this->session->userdata('id'),
 			'nm_alokasi' => $this->input->post('nm_alokasi'),
 			'id_posko' => $this->input->post('id_posko'),
-			'id_bantuan' => $this->input->post('id_bantuan'),
+			'nama_bantuan' => $this->input->post('nama_bantuan'),
+			'jumlah_bantuan' => $this->input->post('jumlah_bantuan'),
 			'tgl_alokasi' => date('Y-m-d'),
 		];
 

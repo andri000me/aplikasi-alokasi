@@ -64,16 +64,17 @@
                                 </div>
                             </div>
 
+                                         
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Bantuan</label>
-                                    <select class="form-control" required name="id_bantuan">
-                                        <option value="">--</option>
-                                        <?php foreach ($bantuan as $key): ?>
-                                        <option value="<?= $key->id_bantuan ?>"><?= $key->jenis_bantuan ?></option>
-                                            
-                                        <?php endforeach ?>
-                                    </select>
+                                    <label class="form-control-label" for="teknisi4_id">Jumlah Bantuan</label>
+                                    <input type="text" name="jumlah_bantuan" class="form-control" >
+                                </div>
+                            </div>
+                             <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Nama Bantuan</label>
+                                    <input type="text" name="nama_bantuan" class="form-control" >
                                 </div>
                             </div>
 

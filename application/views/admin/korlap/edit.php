@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Nama korlap</label>
+                                    <label class="form-control-label" for="teknisi4_id">Username</label>
                                     <input type="text" name="username" class="form-control" value="<?= $korlap->username ?>">
                                 </div>
                             </div>

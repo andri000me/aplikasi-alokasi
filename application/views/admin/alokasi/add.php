@@ -64,19 +64,7 @@
                                 </div>
                             </div>
 
-                                         
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Jumlah Bantuan</label>
-                                    <input type="text" name="jumlah_bantuan" class="form-control" >
-                                </div>
-                            </div>
-                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Nama Bantuan</label>
-                                    <input type="text" name="nama_bantuan" class="form-control" >
-                                </div>
-                            </div>
+
 
 
                             <div class="col-lg-12">

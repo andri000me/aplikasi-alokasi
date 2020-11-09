@@ -67,7 +67,19 @@
                                 </div>
                             </div>
 
-               
+                       <?php $bantuan = $this->db->get('bantuan')->result(); ?>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="teknisi4_id">Bantuan</label>
+                                    <select name="id_bantuan" class="form-control" required="">
+                                        <option value="">--</option>
+                                        <?php foreach ($bantuan as $key): ?>
+                                        <option value="<?= $key->id_bantuan ?>"><?= $key->nama_bantuan ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+                            </div>
+                            
 
                             <div class="col-lg-12">
                                 <div class="form-group">
@@ -75,8 +87,7 @@
                                 </div>
                             </div>
                      
-     
-                            
+                    
                            
                         </div>
                         	</form>

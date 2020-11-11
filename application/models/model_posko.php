@@ -27,7 +27,9 @@ class model_posko extends CI_Model {
 			'status' => "menunggu alokasi",
 			'id' => $this->session->userdata('id'),
 			'tanggal' => date('Y-m-d'),
-			'id_bantuan' => $this->input->post('id_bantuan')
+			'id_bantuan' => $this->input->post('id_bantuan'),
+			'lengkap' => '-',
+			'keterangan' => ''
 		];
 
 		$this->db->insert('posko', $data);

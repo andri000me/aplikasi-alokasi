@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Nov 2020 pada 11.15
+-- Waktu pembuatan: 11 Nov 2020 pada 21.22
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -79,6 +79,13 @@ CREATE TABLE `distribusi` (
   `tgl_diterima` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `distribusi`
+--
+
+INSERT INTO `distribusi` (`id_dis`, `nm_distribusi`, `id`, `id_alokasi`, `sarana`, `tgl_distribusi`, `tgl_diterima`) VALUES
+(1, 'Distribusi banjir psg 2', 2, 2, 'motor', '2020-11-11', '2020-11-11');
+
 -- --------------------------------------------------------
 
 --
@@ -119,17 +126,20 @@ CREATE TABLE `posko` (
   `status` enum('menunggu alokasi','menunggu distribusi','bantuan dikirim','bantuan sampai') NOT NULL,
   `id` int(11) NOT NULL,
   `tanggal` date NOT NULL,
-  `id_bantuan` int(11) NOT NULL
+  `id_bantuan` int(11) NOT NULL,
+  `lengkap` enum('ya','tidak','''-''') NOT NULL,
+  `keterangan` varchar(258) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `posko`
 --
 
-INSERT INTO `posko` (`id_posko`, `nm_posko`, `bencana`, `jumlah_korban`, `kondisi`, `latitude`, `longitude`, `alamat_posko`, `status`, `id`, `tanggal`, `id_bantuan`) VALUES
-(1, '-', 'Banjir', 5, 'jelek', '0.000000', '0.000000', '-', 'menunggu alokasi', 2, '2020-10-13', 0),
-(2, 'Posko Banjir 4', 'Banjir', 1, 'sedang', '-7.090911', '107.668887', 'Dimana aja', 'bantuan dikirim', 2, '2020-10-24', 0),
-(3, 'posko syahdu', 'Gunung Meletus', 1, 'Santay', '-7.090911', '105.591960', 'Bandung', 'menunggu distribusi', 2, '2020-11-09', 1);
+INSERT INTO `posko` (`id_posko`, `nm_posko`, `bencana`, `jumlah_korban`, `kondisi`, `latitude`, `longitude`, `alamat_posko`, `status`, `id`, `tanggal`, `id_bantuan`, `lengkap`, `keterangan`) VALUES
+(1, '-', 'Banjir', 5, 'jelek', '0.000000', '0.000000', '-', 'menunggu alokasi', 2, '2020-10-13', 0, 'ya', ''),
+(2, 'Posko Banjir 4', 'Banjir', 1, 'sedang', '-7.090911', '107.668887', 'Dimana aja', 'bantuan dikirim', 2, '2020-10-24', 0, 'ya', ''),
+(3, 'posko syahdu', 'Gunung Meletus', 1, 'Santay', '-7.090911', '105.591960', 'Bandung', 'bantuan sampai', 2, '2020-11-09', 1, 'ya', 'kurnag mi rebus nya 5'),
+(4, 'asa', 'Banjir', 1, 'sas', '-7.090911', '107.668887', 'Bandung', 'menunggu alokasi', 2, '2020-11-11', 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -219,7 +229,7 @@ ALTER TABLE `bantuan`
 -- AUTO_INCREMENT untuk tabel `distribusi`
 --
 ALTER TABLE `distribusi`
-  MODIFY `id_dis` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `korlap`
@@ -231,7 +241,7 @@ ALTER TABLE `korlap`
 -- AUTO_INCREMENT untuk tabel `posko`
 --
 ALTER TABLE `posko`
-  MODIFY `id_posko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_posko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

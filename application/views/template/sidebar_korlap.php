@@ -10,6 +10,9 @@
                     <li>
                         <a href="<?= base_url('page_korlap/posko') ?>" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Posko</span></a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('page_korlap/bantuan') ?>" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Bantuan</span></a>
+                    </li>
                    
                 </ul>
       

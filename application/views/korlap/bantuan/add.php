@@ -11,23 +11,23 @@
                         		</div>
                         	</div>
 
-                        	<form action="<?= base_url('page_admin/add_bantuan_bum') ?>" method="post">
+                        	<form action="<?= base_url('page_korlap/add_bantuan_bum') ?>" method="post">
                         		
                         		<div class="row">
             
              
   
              
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Jumlah Bantuan</label>
-                                    <input type="text" name="jumlah_bantuan" class="form-control" >
-                                </div>
-                            </div>
+                         <div class="col-lg-6">
+                            <div class="form-group">
+                               <label for="exampleFormControlTextarea1">Keterangan</label>
+                               <textarea class="form-control"  name="keterangan" id="exampleFormControlTextarea1" rows="3"></textarea>
+                             </div>
+                         </div>
                              <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="teknisi4_id">Jenis Bantuan</label>
-                                    <input type="text" name="jenis_bantuan" class="form-control" >
+                                    <label class="form-control-label" for="teknisi4_id">Bantuan</label>
+                                    <input type="text" name="nama_bantuan" class="form-control" >
                                 </div>
                             </div>
                            

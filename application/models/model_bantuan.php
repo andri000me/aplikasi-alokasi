@@ -9,8 +9,8 @@ class model_bantuan extends CI_Model {
 
 	public function add_bantuan(){
 		$data = [
-			'jenis_bantuan' => $this->input->post('jenis_bantuan'),
-			'jumlah_bantuan' => $this->input->post('jumlah_bantuan'),
+			'nama_bantuan' => $this->input->post('nama_bantuan'),
+			'keterangan' => $this->input->post('keterangan'),
 
 		];
 
@@ -19,8 +19,8 @@ class model_bantuan extends CI_Model {
 
 	public function edit_bantuan(){
 		$data = [
-					'jenis_bantuan' => $this->input->post('jenis_bantuan'),
-			'jumlah_bantuan' => $this->input->post('jumlah_bantuan'),
+					'nama_bantuan' => $this->input->post('nama_bantuan'),
+			'keterangan' => $this->input->post('keterangan'),
 		];
 
 		$this->db->where('id_bantuan', $this->input->post('id_bantuan'));

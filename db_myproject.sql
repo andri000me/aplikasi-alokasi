@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Nov 2020 pada 07.38
+-- Waktu pembuatan: 14 Nov 2020 pada 08.38
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -151,6 +151,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(40) NOT NULL,
   `username` varchar(20) NOT NULL,
+  `email` varchar(258) NOT NULL,
   `password` varchar(50) NOT NULL,
   `level` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -159,10 +160,10 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `username`, `password`, `level`) VALUES
-(1, 'danael', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'danael', 'korlap@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'korlap'),
-(3, 'danael', 'pimpinan@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'pimpinan');
+INSERT INTO `user` (`id`, `name`, `username`, `email`, `password`, `level`) VALUES
+(1, 'danael', 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+(2, 'danael', 'korlap', 'korlap@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'korlap'),
+(3, 'danael', 'pimpinan', 'pimpinan@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'pimpinan');
 
 --
 -- Indexes for dumped tables
@@ -223,7 +224,7 @@ ALTER TABLE `alokasi`
 -- AUTO_INCREMENT untuk tabel `bantuan`
 --
 ALTER TABLE `bantuan`
-  MODIFY `id_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `distribusi`

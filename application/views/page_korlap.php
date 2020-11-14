@@ -1,6 +1,6 @@
 <?php 
 	
-	$j = $this->db->get_where('korlap', ['email' => $this->session->userdata('username')])->row();
+	$j = $this->db->get_where('korlap', ['email' => $this->session->userdata('email')])->row();
 
  ?>
                
